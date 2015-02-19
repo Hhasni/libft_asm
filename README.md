@@ -1,7 +1,7 @@
 # libft_asm
 
 
-HOW TO PLAY:
+HOW TO PLAY:\n
   Use Clang (fuck gcc)
   usage ./a.out -[ARG]
     -libc to have libc compare test
