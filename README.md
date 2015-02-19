@@ -5,6 +5,7 @@ HOW TO PLAY:
 
 
   Use Clang (fuck gcc)
+  
   usage ./a.out -[ARG]
     -libc to have libc compare test
     -null to have libc compare test and null test (view info)
