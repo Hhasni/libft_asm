@@ -230,25 +230,14 @@ void		ft_test_strcat(int null){
 	bkp1 = strcat(str1, str2);
 	bkp2 = ft_strcat(stra, strb);
 	if (strcmp(bkp1, bkp2))
-		ret = ft_error_strcat(ret, bkp1, bkp2, 0);
-
-	if (strcmp(str1, stra))
-		ret = ft_error_strcat(ret, str1, stra, 1);
-	str1 = strdup("a");
-	str2 = strdup("world");
-	stra = strdup("a");
-	strb = strdup("world");
-	bkp1 = strcat(str1, str2);
-	bkp2 = ft_strcat(stra, strb);
-	if (strcmp(bkp1, bkp2))
 		ret = ft_error_strcat(ret, bkp1, bkp2, 2);
 
 	if (strcmp(str1, stra))
 		ret = ft_error_strcat(ret, str1, stra, 3);
-	str1 = strdup("Hello");
-	str2 = strdup("");
-	stra = strdup("Hello");
-	strb = strdup("");
+	str1 = strdup("a");
+	str2 = strdup("world");
+	stra = strdup("a");
+	strb = strdup("world");
 	bkp1 = strcat(str1, str2);
 	bkp2 = ft_strcat(stra, strb);
 	if (strcmp(bkp1, bkp2))
@@ -256,6 +245,17 @@ void		ft_test_strcat(int null){
 
 	if (strcmp(str1, stra))
 		ret = ft_error_strcat(ret, str1, stra, 5);
+	str1 = strdup("Hello");
+	str2 = strdup("");
+	stra = strdup("Hello");
+	strb = strdup("");
+	bkp1 = strcat(str1, str2);
+	bkp2 = ft_strcat(stra, strb);
+	if (strcmp(bkp1, bkp2))
+		ret = ft_error_strcat(ret, bkp1, bkp2, 6);
+
+	if (strcmp(str1, stra))
+		ret = ft_error_strcat(ret, str1, stra, 7);
 	str1 = strdup("");
 	str2 = strdup("world");
 	stra = strdup("");
@@ -263,9 +263,9 @@ void		ft_test_strcat(int null){
 	bkp1 = strcat(str1, str2);
 	bkp2 = ft_strcat(stra, strb);
 	if (strcmp(bkp1, bkp2))
-		ret = ft_error_strcat(ret, bkp1, bkp2, 6);
+		ret = ft_error_strcat(ret, bkp1, bkp2, 8);
 	if (strcmp(str1, stra))
-		ret = ft_error_strcat(ret, str1, stra, 7);
+		ret = ft_error_strcat(ret, str1, stra, 9);
 	str1 = strdup("a");
 	str2 = strdup("b");
 	stra = strdup("a");
@@ -273,9 +273,9 @@ void		ft_test_strcat(int null){
 	bkp1 = strcat(str1, str2);
 	bkp2 = ft_strcat(stra, strb);
 	if (strcmp(bkp1, bkp2))
-		ret = ft_error_strcat(ret, bkp1, bkp2, 8);
+		ret = ft_error_strcat(ret, bkp1, bkp2, 10);
 	if (strcmp(str1, stra))
-		ret = ft_error_strcat(ret, str1, stra, 9);
+		ret = ft_error_strcat(ret, str1, stra, 11);
 	str1 = strdup("");
 	str2 = strdup("");
 	stra = strdup("");
@@ -283,9 +283,9 @@ void		ft_test_strcat(int null){
 	bkp1 = strcat(str1, str2);
 	bkp2 = ft_strcat(stra, strb);
 	if (strcmp(bkp1, bkp2))
-		ret = ft_error_strcat(ret, bkp1, bkp2, 10);
+		ret = ft_error_strcat(ret, bkp1, bkp2, 12);
 	if (strcmp(str1, stra))
-		ret = ft_error_strcat(ret, str1, stra, 11);
+		ret = ft_error_strcat(ret, str1, stra, 13);
 	if (!ret)
 		printf(GREEN"OK\n"STOP);
 	//NULL TEST
@@ -898,139 +898,139 @@ void		ft_test_memset(int null){
 	str1 = memset(str1, 'a', 1);
 	str2 = ft_memset(str2, 'a', 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 1);
 	str1 = strdup("hello");
 	str2 = strdup("hello");
 	memset(str1, 'a', 4);
 	ft_memset(str2, 'a', 4);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 2);
 	str1 = strdup("hello");
 	str2 = strdup("hello");
 	str1 = memset(str1, 'a', 4);
 	str2 = ft_memset(str2, 'a', 4);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 3);
 	str1 = strdup("hello");
 	str2 = strdup("hello");
 	memset(str1, 'a', 10);
 	ft_memset(str2, 'a', 10);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 4);
 	str1 = strdup("hello");
 	str2 = strdup("hello");
 	str1 = memset(str1, 'a', 10);
 	str2 = ft_memset(str2, 'a', 10);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 5);
 	str1 = strdup("a");
 	str2 = strdup("a");
 	memset(str1, 'z', 1);
 	ft_memset(str2, 'z', 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 6);
 	str1 = strdup("a");
 	str2 = strdup("a");
 	str1 = memset(str1, 'z', 1);
 	str2 = ft_memset(str2, 'z', 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 7);
 	str1 = strdup("a");
 	str2 = strdup("a");
 	memset(str1, 'z', 0);
 	ft_memset(str2, 'z', 0);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 8);
 	str1 = strdup("a");
 	str2 = strdup("a");
 	str1 = memset(str1, 'z', 0);
 	str2 = ft_memset(str2, 'z', 0);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 9);
 	str1 = strdup("");
 	str2 = strdup("");
 	memset(str1, 'z', 1);
 	ft_memset(str2, 'z', 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 10);
 	str1 = strdup("");
 	str2 = strdup("");
 	str1 = memset(str1, 'z', 1);
 	str2 = ft_memset(str2, 'z', 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 11);
 	str1 = strdup("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
 	str2 = strdup("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
 	memset(str1, 'z', 1);
 	ft_memset(str2, 'z', 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 12);
 	str1 = strdup("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
 	str2 = strdup("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
 	str1 = memset(str1, 'z', 1);
 	str2 = ft_memset(str2, 'z', 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 13);
 	str1 = strdup("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
 	str2 = strdup("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
 	memset(str1, 'z', 50);
 	ft_memset(str2, 'z', 50);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 14);
 	str1 = strdup("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
 	str2 = strdup("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
 	str1 = memset(str1, 'z', 50);
 	str2 = ft_memset(str2, 'z', 50);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 15);
 	str1 = strdup("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
 	str2 = strdup("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
 	memset(str1, 'z', strlen(str1));
 	ft_memset(str2, 'z', strlen(str2));
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 16);
 	str1 = strdup("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
 	str2 = strdup("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
 	str1 = memset(str1, 'z', strlen(str1));
 	str2 = ft_memset(str2, 'z', strlen(str2));
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 17);
 	str1 = strdup("Hello World!");
 	str2 = strdup("Hello World!");
 	memset(str1, 'z', 1);
 	ft_memset(str2, 'z', 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 18);
 	str1 = strdup("Hello World!");
 	str2 = strdup("Hello World!");
 	str1 = memset(str1, 'z', 1);
 	str2 = ft_memset(str2, 'z', 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 19);
 	str1 = strdup("  Hello World!  ");
 	str2 = strdup("  Hello World!  ");
 	memset(str1, 'z', strlen(str1));
 	ft_memset(str2, 'z', strlen(str2));
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 20);
 	str1 = strdup("  Hello World!  ");
 	str2 = strdup("  Hello World!  ");
 	str1 = memset(str1, 'z', strlen(str1));
 	str2 = ft_memset(str2, 'z', strlen(str2));
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 21);
 	str1 = strdup("  Hello World!  ");
 	str2 = strdup("  Hello World!  ");
 	memset(str1, 'z', 1);
 	ft_memset(str2, 'z', 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 22);
 	str1 = strdup("  Hello World!  ");
 	str2 = strdup("  Hello World!  ");
 	str1 = memset(str1, 'z', 1);
 	str2 = ft_memset(str2, 'z', 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 23);
 	int a;
 	int b;
 	int *i;
@@ -1040,18 +1040,18 @@ void		ft_test_memset(int null){
 	b = 65;
 	i = &a;
 	j = &b;
-	i = memset(i, 'z', 1);
-	j = ft_memset(j, 'z', 1);
+	str1 = (char *)memset(i, 'z', 1);
+	str2 = (char *)ft_memset(j, 'z', 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 24);
 	a = 65;
 	b = 65;
 	i = &a;
 	j = &b;
-	memset(i, 'z', 1);
-	ft_memset(j, 'z', 1);
+	str1 = (char *)memset(i, 'z', 1);
+	str2 = (char *)ft_memset(j, 'z', 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memset(ret, str1, str2, 0);
+		ret = ft_error_ft_memset(ret, str1, str2, 25);
 	if (!ret)
 		printf(GREEN"OK\n"STOP);
 	if (null){
@@ -1087,43 +1087,43 @@ void		ft_test_memcpy(int null){
 	str1 = memcpy(str1, "xxxxx", 1);
 	str2 = memcpy(str2, "xxxxx", 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memcpy(ret, str1, str2, 0);
+		ret = ft_error_ft_memcpy(ret, str1, str2, 1);
 	str1 = strdup("");
 	str2 = strdup("");
 	str1 = memcpy(str1, "xxxxx", 1);
 	str2 = memcpy(str2, "xxxxx", 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memcpy(ret, str1, str2, 0);
+		ret = ft_error_ft_memcpy(ret, str1, str2, 2);
 	str1 = strdup("");
 	str2 = strdup("");
 	str1 = memcpy(str1, "xxxxx", 0);
 	str2 = memcpy(str2, "xxxxx", 0);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memcpy(ret, str1, str2, 0);
+		ret = ft_error_ft_memcpy(ret, str1, str2, 3);
 	str1 = strdup("");
 	str2 = strdup("");
 	str1 = memcpy(str1, "", 1);
 	str2 = memcpy(str2, "", 1);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memcpy(ret, str1, str2, 0);
+		ret = ft_error_ft_memcpy(ret, str1, str2, 4);
 	str1 = strdup("Hello World");
 	str2 = strdup("Hello World");
 	str1 = memcpy(str1, "q", 30);
 	str2 = memcpy(str2, "q", 30);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memcpy(ret, str1, str2, 0);
+		ret = ft_error_ft_memcpy(ret, str1, str2, 5);
 	str1 = strdup("Hello World");
 	str2 = strdup("Hello World");
 	str1 = memcpy(str1, "q", 100);
 	str2 = memcpy(str2, "q", 100);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memcpy(ret, str1, str2, 0);
+		ret = ft_error_ft_memcpy(ret, str1, str2, 6);
 	str1 = strdup("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
 	str2 = strdup("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
 	str1 = memcpy(str1, "z", 10);
 	str2 = memcpy(str2, "z", 10);
 	if (strcmp(str1, str2))
-		ret = ft_error_ft_memcpy(ret, str1, str2, 0);
+		ret = ft_error_ft_memcpy(ret, str1, str2, 7);
 	if (!ret)
 		printf(GREEN"OK\n"STOP);
 	if (null){
@@ -1215,23 +1215,53 @@ void 		ft_test_cat(){
 	}
 	printf("________________\n");
 	sleep(1);
-	printf(YELLOW"type a filename:\033[0m\n");
+	printf(YELLOW"type a filename to open it:\033[0m\n");
 	bzero(buff, 100);
 	read(0, buff, 100);
 	sleep(1);
 	char *filename = ft_strdup(buff);
 	filename[strlen(filename) - 1] = 0;
-	if ((fd = open(filename, O_RDONLY)) == -1){
+	if ((fd = open(filename, O_RDONLY)) == -1)
 		ft_error(RED"OPEN FAILED"STOP);
-		exit(0);
-	}
 	else{
 		ft_cat(fd);
-		if ((close(fd)) == -1){
+		if ((close(fd)) == -1)
 			return (ft_error(RED"CLOSE FAILED"STOP));
-			exit(0);
-		}
 	}
+	printf("________________\n");
+
+	fd = 0;
+	ft_puts("test cat-------------");
+	ft_puts("ft_cat(-1): no problem?");
+	ft_cat(-1);
+	fd = open(__FILE__, O_RDONLY);
+	ft_puts("ft_cat(fd): open main.c");
+	ft_cat(fd);
+	ft_puts("ft_cat(0): type some text");
+	ft_cat(0);
+	close(fd);
+
+	printf("BRAVO\n");
+}
+
+void 	ft_test_cat2(){
+	printf("fd 0 : please type some text:\n");
+	ft_cat(0);
+}
+void 	ft_test_cat3(){
+	int fd;
+
+	fd = 0;
+	ft_puts("cat-------------");
+	ft_puts("ft_cat(-1): no problem?");
+	ft_cat(-1);
+	fd = open(__FILE__, O_RDONLY);
+	ft_puts("ft_cat(fd): open main.c");
+	ft_cat(fd);
+	ft_puts("ft_cat(0): type some text");
+	ft_cat(0);
+	close(fd);
+	printf("BRAVO\n");
 }
 
 int		main(int ac, char **av)
