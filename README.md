@@ -23,3 +23,8 @@ HOW TO PLAY:
       -info for more informations
 
 Easy tests for libftasm not evil ones.
+
+
+
+	V0.1 Original
+	V0.15 Bugfix Function prototype
