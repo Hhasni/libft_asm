@@ -6,20 +6,20 @@ HOW TO PLAY:
 
   Use Clang (fuck gcc)
   
-  usage ./a.out -[ARG]
+    usage ./a.out -[ARG]
   
-    -libc to have libc compare test
+      -libc to have libc compare test
     
-    -null to have libc compare test and null test (view info)
+      -null to have libc compare test and null test (view info)
     
-    -puts to have the puts test
+      -puts to have the puts test
     
-    -ft_cat to have the ft_cat test
+      -ft_cat to have the ft_cat test
     
-    -putchar to have the putchar test(bonus)
+      -putchar to have the putchar test(bonus)
     
-    -full to have all test
+      -full to have all test
     
-    -info for more informations
+      -info for more informations
 
 Easy tests for libftasm not evil ones.
