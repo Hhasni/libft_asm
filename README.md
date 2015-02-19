@@ -26,6 +26,6 @@ Easy tests for libftasm not evil ones.
 
 
 
-	V0.1 Original
-	V0.15 Bugfix Function prototype
-	V0.2 Bugfix ft_memeset , ft_cat + add test for ft_cat
+	V0.2		Bugfix ft_memeset , ft_cat + add test for ft_cat
+	V0.15		Bugfix Function prototype
+	V0.1		Original
