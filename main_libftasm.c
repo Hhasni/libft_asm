@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main_libftasm.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hhasni <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/18 17:47:15 by hhasni            #+#    #+#             */
-/*   Updated: 2015/02/18 17:47:18 by hhasni           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
@@ -23,15 +12,15 @@ extern int 		ft_isprint(int nb);
 extern int 		ft_isascii(int nb);
 extern int 		ft_isalnum(int nb);
 extern void 	ft_bzero(void *str, int nb);
-extern int 		ft_strlen(char *str);
-extern char 	*ft_strcat(char *s1, char *s2);
+extern size_t	ft_strlen(const char *str);
+extern char 	*ft_strcat(char *s1, const char *s2);
 extern int 		ft_toupper(int c);
 extern int 		ft_tolower(int c);
-extern void 	ft_puts(char *str);
+extern void 	ft_puts(const char *str);
 extern void 	ft_putchar(char c);
 extern void 	*ft_memset(void *b, int c, size_t len);
-extern void 	*ft_memcpy(void *dst, void *src, size_t len);
-extern char 	*ft_strdup(char *str);
+extern void 	*ft_memcpy(void *dst, const void *src, size_t len);
+extern char 	*ft_strdup(const char *str);
 extern void 	ft_cat(int i);
 
 void 			*malloc(size_t size);
@@ -852,25 +841,25 @@ void		ft_test_strlen(int null){
 	// FT_STRLEN
 	printf(BLUE"ft_strlen  = "STOP); 
 	str = strdup("hello");
-	if ((int)strlen(str) != ft_strlen(str))
+	if (strlen(str) != ft_strlen(str))
 		ret = ft_error_ft_strlen(ret, str, strlen(str), ft_strlen(str), 0);
 	str = strdup("hello World!");
-	if ((int)strlen(str) != ft_strlen(str))
+	if (strlen(str) != ft_strlen(str))
 		ret = ft_error_ft_strlen(ret, str, strlen(str), ft_strlen(str), 1);
 	str = strdup("helloYou....");
-	if ((int)strlen(str) != ft_strlen(str))
+	if (strlen(str) != ft_strlen(str))
 		ret = ft_error_ft_strlen(ret, str, strlen(str), ft_strlen(str), 2);
 	str = strdup("hello!");
-	if ((int)strlen(str) != ft_strlen(str))
+	if (strlen(str) != ft_strlen(str))
 		ret = ft_error_ft_strlen(ret, str, strlen(str), ft_strlen(str), 3);
 	str = strdup("");
-	if ((int)strlen(str) != ft_strlen(str))
+	if (strlen(str) != ft_strlen(str))
 		ret = ft_error_ft_strlen(ret, str, strlen(str), ft_strlen(str), 4);
-	if ((int)strlen("plop") != ft_strlen("plop"))
+	if (strlen("plop") != ft_strlen("plop"))
 		ret = ft_error_ft_strlen(ret, "plop", strlen("plop"), ft_strlen("plop"), 5);
-	if ((int)strlen("") != ft_strlen(""))
+	if (strlen("") != ft_strlen(""))
 		ret = ft_error_ft_strlen(ret, "", strlen(""), ft_strlen(""), 6);
-	if ((int)strlen("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA") != ft_strlen("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA"))
+	if (strlen("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA") != ft_strlen("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA"))
 		ret = ft_error_ft_strlen(ret, "AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA", strlen("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA"), ft_strlen("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA"), 7);	// str2 = NULL;
 	if (!ret)
 		printf(GREEN"OK\n"STOP);
@@ -1209,10 +1198,6 @@ void 		ft_test_cat(){
 
 	// FT_CAT
 	printf(BLUE"ft_cat  = \n"STOP);
-	// printf(YELLOW"type some text:\033[0m\n");
-	// ft_cat(0);
-	// printf("________________\n");
-	// sleep(1);
 	write(1, YELLOW"opening makefile", 16+ strlen(YELLOW));
 	write(1, ".", 1);
 	usleep(500000);
@@ -1281,6 +1266,7 @@ int		main(int ac, char **av)
 			ft_test_memset(1);
 			ft_test_memcpy(1);
 			ft_test_strdup(1);
+			ft_test_puts(1);
 		}
 		if (!strcmp(av[1], "-full")){
 			ft_test_bzero(1);
@@ -1296,14 +1282,14 @@ int		main(int ac, char **av)
 			ft_test_memset(1);
 			ft_test_memcpy(1);
 			ft_test_strdup(1);
-			ft_test_putchar();
+			// ft_test_putchar();
 			ft_test_puts(1);
 			ft_test_cat();
 		}
 		else if (!strcmp(av[1], "-puts"))
-			ft_test_puts(1);
-		else if (!strcmp(av[1], "-putchar"))
-			ft_test_putchar();
+			ft_test_puts(0);
+		// else if (!strcmp(av[1], "-putchar"))
+			// ft_test_putchar();
 		else if (!strcmp(av[1], "-ft_cat"))
 			ft_test_cat();
 	}
@@ -1317,6 +1303,6 @@ int		main(int ac, char **av)
 			printf("-putchar to have the putchar test(bonus)\n");
 			printf("-full to have all test\n");
 			printf("-info for more informations\n");
-		}
+	}
 	return(0);
 }
