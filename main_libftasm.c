@@ -1271,7 +1271,7 @@ int		main(int ac, char **av)
 		if (!strcmp(av[1], "-info")){
 			printf(RED"/!\\ If a test is KO, it is not necessarily false, please make sure you understand the test before grading your peer.\n"STOP);
 			printf(RED"A segfault in libcnull test, is not necessarily bad, the libc also may segfault the same way so please don't be a dickhead!\n"STOP);
-			printf("Special Thx to Tpageard for his help\n");
+			printf("Special Thx to Tpageard and Erobert for their help\n");
 		}
 		if (!strcmp(av[1], "-libc")){
 			ft_test_bzero(0);
