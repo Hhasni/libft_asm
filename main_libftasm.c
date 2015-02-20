@@ -21,7 +21,7 @@ extern void 	ft_putchar(char c);
 extern void 	*ft_memset(void *b, int c, size_t len);
 extern void 	*ft_memcpy(void *dst, const void *src, size_t len);
 extern char 	*ft_strdup(const char *str);
-extern void 	ft_cat(int i);
+extern int 	ft_cat(int i);
 
 void 			*malloc(size_t size);
 
@@ -1196,7 +1196,7 @@ void 		ft_test_cat(){
 	int 	fd;
 	char 	buff[1024];
 
-	// FT_CAT
+	//FT_CAT
 	printf(BLUE"ft_cat  = \n"STOP);
 	write(1, YELLOW"opening makefile", 16+ strlen(YELLOW));
 	write(1, ".", 1);
@@ -1214,7 +1214,16 @@ void 		ft_test_cat(){
 			ft_error(RED"CLOSE FAILED"STOP);
 	}
 	printf("________________\n");
-	sleep(1);
+	while (1){
+		printf(GREEN"\ncontinue Y/N?\n"STOP);
+		bzero(buff, 100);
+		read(0, buff, 100);
+		if (buff[0] == 'N')
+			return;
+		else if (buff[0] == 'Y')
+			break;
+	}
+	printf("________________\n");
 	printf(YELLOW"type a filename to open it:\033[0m\n");
 	bzero(buff, 100);
 	read(0, buff, 100);
@@ -1228,40 +1237,48 @@ void 		ft_test_cat(){
 		if ((close(fd)) == -1)
 			return (ft_error(RED"CLOSE FAILED"STOP));
 	}
-	printf("________________\n");
-
+	printf("\n________________\n");
+	while (1){
+		printf(GREEN"\ncontinue Y/N?\n"STOP);
+		bzero(buff, 100);
+		read(0, buff, 100);
+		if (buff[0] == 'N')
+			return;
+		else if (buff[0] == 'Y')
+			break;
+	}
 	fd = 0;
-	ft_puts("test cat-------------");
-	ft_puts("ft_cat(-1): no problem?");
+	printf("\nft_cat(-1): no problem?\n");
 	ft_cat(-1);
+	printf("\n________________\n");
+	while (1){
+		printf(GREEN"\ncontinue Y/N?\n"STOP);
+		bzero(buff, 100);
+		read(0, buff, 100);
+		if (buff[0] == 'N')
+			return;
+		else if (buff[0] == 'Y')
+			break;
+	}
 	fd = open(__FILE__, O_RDONLY);
-	ft_puts("ft_cat(fd): open main.c");
+	printf("\nft_cat(fd): open main.c\n");
 	ft_cat(fd);
-	ft_puts("ft_cat(0): type some text");
+
+	printf("\n________________\n");
+	while (1){
+		printf(GREEN"\ncontinue Y/N?\n"STOP);
+		bzero(buff, 100);
+		read(0, buff, 100);
+		if (buff[0] == 'N')
+			return;
+		else if (buff[0] == 'Y')
+			break;
+	}
+	printf("\n________________\n");
+	printf(GREEN"\nft_cat(0): type some text\033[0m\n");
 	ft_cat(0);
 	close(fd);
-
-	printf("BRAVO\n");
-}
-
-void 	ft_test_cat2(){
-	printf("fd 0 : please type some text:\n");
-	ft_cat(0);
-}
-void 	ft_test_cat3(){
-	int fd;
-
-	fd = 0;
-	ft_puts("cat-------------");
-	ft_puts("ft_cat(-1): no problem?");
-	ft_cat(-1);
-	fd = open(__FILE__, O_RDONLY);
-	ft_puts("ft_cat(fd): open main.c");
-	ft_cat(fd);
-	ft_puts("ft_cat(0): type some text");
-	ft_cat(0);
-	close(fd);
-	printf("BRAVO\n");
+	printf(GREEN"BRAVO\n"STOP);
 }
 
 int		main(int ac, char **av)
