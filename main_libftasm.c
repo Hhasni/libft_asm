@@ -1401,9 +1401,8 @@ int		main(int ac, char **av)
 			ft_test_puts(0);
 		// else if (!strcmp(av[1], "-putchar"))
 			// ft_test_putchar();
-
-		else if (!strcmp(av[1], "-putstr"))
-			ft_test_putstr(1);
+		// else if (!strcmp(av[1], "-putstr"))
+		// 	ft_test_putstr(1);
 		else if (!strcmp(av[1], "-ft_cat"))
 			ft_test_cat();
 	}
