@@ -17,19 +17,20 @@ extern char 	*ft_strcat(char *s1, const char *s2);
 extern int 		ft_toupper(int c);
 extern int 		ft_tolower(int c);
 extern void 	ft_puts(const char *str);
+extern void 	ft_putstr(const char *str);
 extern void 	ft_putchar(char c);
 extern void 	*ft_memset(void *b, int c, size_t len);
 extern void 	*ft_memcpy(void *dst, const void *src, size_t len);
 extern char 	*ft_strdup(const char *str);
-extern int 	ft_cat(int i);
+extern int 		ft_cat(int i);
 
 void 			*malloc(size_t size);
 
-#define RED  "\033[31m"
-#define GREEN  "\033[32m"
-#define BLUE  "\033[34m"
+#define RED  	"\033[31m"
+#define GREEN  	"\033[32m"
+#define BLUE  	"\033[34m"
 #define YELLOW  "\033[33m"
-#define STOP "\033[0m"
+#define STOP 	"\033[0m"
 
 int			ft_error_bzero(int ret, char *str1, char *str2, int test){
 	if (ret == 0)
@@ -825,6 +826,69 @@ void	ft_test_puts(int null){
 	}
 }
 
+
+void	ft_test_putstr(int null){
+	char *str;
+
+	str = NULL;
+	// FT_PUTS
+	printf(BLUE"ft_putstr = \n"STOP);
+
+	printf("\nstr     = 'aaaa'\n");
+
+	write(1 , "ft_putstr = <", 13);
+	ft_putstr("aaaa");
+	printf(">\n");
+	
+	printf("\nstr     = 'Gro'\n");
+
+	write(1 , "ft_putstr = <", 13);
+	ft_putstr("Gro");
+	printf(">\n");
+
+
+	printf("\nstr     = 'Bplop'\n");
+
+	write(1 , "ft_putstr = <", 13);
+	ft_putstr("Bplop");
+	printf(">\n");
+
+
+	printf("\nstr     = 'ZzZz'\n");
+
+	write(1 , "ft_putstr = <", 13);
+	ft_putstr("ZzZz");
+	printf(">\n");
+
+
+	printf("\nstr     = 'a'\n");
+
+	write(1 , "ft_putstr = <", 13);
+	ft_putstr("a");
+	printf(">\n");
+
+	printf("\nstr     = 'AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA'\n");
+
+	write(1 , "ft_putstr = <", 13);
+	ft_putstr("AaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA");
+	printf(">\n");
+
+	str     = strdup("Hello World");
+	printf("\nstr     = %s\n", str);
+
+	write(1 , "ft_putstr = <", 13);
+	ft_putstr(str);
+	printf(">\n");
+
+	//NULL TEST
+	if (null){
+		printf("\nstr     = NULL\n");
+		write(1 , "ft_putstr = <", 13);
+		ft_putstr(NULL);
+		printf(">\n");
+	}
+}
+
 int 		ft_error_ft_strlen(int ret, char *str, int len1, int len2, int test){
 	if (ret == 0)
 		printf(RED" KO\n"STOP);
@@ -1286,8 +1350,8 @@ int		main(int ac, char **av)
 	if (ac > 1)
 	{
 		if (!strcmp(av[1], "-info")){
-			printf(RED"/!\\ If a test is KO, it is not necessarily false, please make sure you understand the test before grading your peer.\n"STOP);
-			printf(RED"A segfault in libcnull test, is not necessarily bad, the libc also may segfault the same way so please don't be a dickhead!\n"STOP);
+			printf(RED"\t• /!\\ If a test is KO, it is not necessarily\n false, please make sure you understand the test before\n grading your peer.\n"STOP);
+			printf(RED"\t• A segfault in libcnull test, is not\n necessarily bad, the libc also may segfault the same\n way so please don't be a dickhead!\n"STOP);
 			printf("Special Thx to Tpageard and Erobert for their help\n");
 		}
 		if (!strcmp(av[1], "-libc")){
@@ -1337,17 +1401,21 @@ int		main(int ac, char **av)
 			ft_test_puts(0);
 		// else if (!strcmp(av[1], "-putchar"))
 			// ft_test_putchar();
+
+		else if (!strcmp(av[1], "-putstr"))
+			ft_test_putstr(1);
 		else if (!strcmp(av[1], "-ft_cat"))
 			ft_test_cat();
 	}
 	else{
-			printf(RED"Welcome to main_libftasm V0.1\n"STOP);		
+			printf(RED"Welcome to main_libftasm V0.3\n"STOP);		
 			printf("usage ./a.out -[ARG]\n");
 			printf("-libc to have libc compare test\n");
 			printf("-null to have libc compare test and null test (view info)\n");
 			printf("-puts to have the puts test\n");
 			printf("-ft_cat to have the ft_cat test\n");
-			printf("-putchar to have the putchar test(bonus)\n");
+	//		printf("-putchar to have the putchar test(bonus)\n");
+	//		printf("-putstr to have the putstr test(bonus)\n");
 			printf("-full to have all test\n");
 			printf("-info for more informations\n");
 	}

@@ -26,6 +26,7 @@ Easy tests for libftasm not evil ones.
 
 
 
+	V0.3		ft_putstr bonus
 	V0.25		Add test for ft_cat + features
 	V0.2		Bugfix ft_memeset , ft_cat + add test for ft_cat
 	V0.15		Bugfix Function prototype
