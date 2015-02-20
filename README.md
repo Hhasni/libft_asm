@@ -17,6 +17,8 @@ HOW TO PLAY:
       -ft_cat to have the ft_cat test
     
       -putchar to have the putchar test(bonus)
+      
+	  -putstr to have the putstr test(bonus)
     
       -full to have all test
     
